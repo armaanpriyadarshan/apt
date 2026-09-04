@@ -28,6 +28,8 @@ def merge(counts: dict[tuple[bytes, ...], int], num_merges: int) -> list[tuple[b
             freq[p] += cs[w]
             where[p].add(w)
     for _ in range(num_merges):
+        if not freq:
+            break
         pair = max(freq, key=lambda k: (freq[k], k))
         for w in list(where[pair]):
             t, c = ts[w], cs[w]

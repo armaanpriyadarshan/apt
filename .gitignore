@@ -163,7 +163,8 @@ cython_debug/
 *.zip
 
 # project
-data/
+data/*
+!data/tokenizer/
 checkpoints/
 runs/
 wandb/

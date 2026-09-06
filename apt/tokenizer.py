@@ -74,4 +74,4 @@ class Tokenizer:
 
 
     def decode(self, ids: list[int]) -> str:
-        return b"".join(self.vocab[i] for i in ids).decode("utf-8")
+        return b"".join(self.vocab[i] for i in ids).decode("utf-8", errors="replace")
